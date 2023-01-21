@@ -5,6 +5,29 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>2.0.0</Version>
+    <Authors>Bryan Apellanes</Authors>
+    <Company>Three Headz</Company>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Core of the Bam Framework for .NET</Description>
+    <PackageVersion>2.0.0</PackageVersion>
+    <IntermediatePackDir Condition=" '$(OS)' == 'Windows_NT' ">$(HOMEDRIVE)$(HOMEPATH)/.bam/build/pack/$(Configuration)/$(MSBuildThisFileName)/</IntermediatePackDir>
+    <IntermediatePackDir Condition=" '$(OS)' == 'UNIX' ">$(HOME)/.bam/build/pack/$(Configuration)/$(MSBuildThisFileName)/</IntermediatePackDir>
+    <PublishDir>$(IntermediatePackDir)$(TargetFramework)/</PublishDir>
+    <NuspecProperties>publishDir=$([MSBuild]::NormalizeDirectory($(IntermediatePackDir)))</NuspecProperties>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <NuspecFile>bamdb.nuspec</NuspecFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath Condition=" '$(OS)' == 'Windows_NT' ">$(HOMEDRIVE)$(HOMEPATH)\.bam\build\$(Configuration)\$(MSBuildThisFileName)\</OutputPath>
+    <OutputPath Condition=" '$(OS)' == 'UNIX' ">$(HOME)\.bam\build\$(Configuration)\$(MSBuildThisFileName)\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\submodules\bam.core\bam.core\bam.core.csproj" />
+    <ProjectReference Include="..\submodules\bam.net.data.dynamic\bam.net.data.dynamic.csproj" />
+    <ProjectReference Include="..\submodules\bam.net.data.graphql\bam.net.data.graphql.csproj" />
+  </ItemGroup>
 
 </Project>

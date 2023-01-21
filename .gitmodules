@@ -1,3 +1,9 @@
 [submodule "submodules/bam.core"]
 	path = submodules/bam.core
 	url = git@github.com:BryanApellanes/Bam.Core.git
+[submodule "submodules/bam.net.data.graphql"]
+	path = submodules/bam.net.data.graphql
+	url = git@github.com:BryanApellanes/Bam.Net.Data.GraphQL.git
+[submodule "submodules/bam.net.data.dynamic"]
+	path = submodules/bam.net.data.dynamic
+	url = git@github.com:BryanApellanes/Bam.Net.Data.Dynamic.git
