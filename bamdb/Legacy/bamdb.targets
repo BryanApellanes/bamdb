@@ -1,0 +1,11 @@
+<Project>
+    <PropertyGroup>
+        <BamDbFileExe Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">"$(MSBuildThisFileDirectory)/net48/BamDb.exe"</BamDbFileExe>
+        <BamDbFileExe Condition="'$(TargetFrameworkIdentifier)' == '.NETCoreApp' OR '$(TargetFrameworkIdentifier)' == '.NETStandard'">dotnet "$(MSBuildThisFileDirectory)/net5.0/BamDb.dll"</BamDbFileExe>
+        <BamDbConfig>"$(MSBuildProjectDirectory)/bamdb.yaml"</BamDbOutput>
+    </PropertyGroup>
+
+    <Target Name="GenerateBamData" AfterTargets="CoreCompile">
+        <Exec Command="$(BamDbFileExe) /generateSchemaRepository /config:$(BamDbConfig)" />
+    </Target>
+</Project>
