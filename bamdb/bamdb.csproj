@@ -23,11 +23,14 @@
     <OutputPath Condition=" '$(OS)' == 'Windows_NT' ">$(HOMEDRIVE)$(HOMEPATH)\.bam\build\$(Configuration)\$(MSBuildThisFileName)\</OutputPath>
     <OutputPath Condition=" '$(OS)' == 'UNIX' ">$(HOME)\.bam\build\$(Configuration)\$(MSBuildThisFileName)\</OutputPath>
   </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\submodules\bam.core\bam.core\bam.core.csproj" />
-    <ProjectReference Include="..\submodules\bam.net.data.dynamic\bam.net.data.dynamic.csproj" />
-    <ProjectReference Include="..\submodules\bam.net.data.graphql\bam.net.data.graphql.csproj" />
+    <Compile Remove="_legacy\**" />
+    <EmbeddedResource Remove="_legacy\**" />
+    <None Remove="_legacy\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\submodules\bam.base\bam.base\bam.base.csproj" />
+    <ProjectReference Include="..\submodules\bam.data\bam.data\bam.data.csproj" />
   </ItemGroup>
 
 </Project>

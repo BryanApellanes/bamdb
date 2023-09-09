@@ -31,3 +31,6 @@
 [submodule "submodules/bam.logging"]
 	path = submodules/bam.logging
 	url = git@github.com:BryanApellanes/bam.logging.git
+[submodule "submodules/bam.testing"]
+	path = submodules/bam.testing
+	url = git@github.com:BryanApellanes/bam.testing.git
