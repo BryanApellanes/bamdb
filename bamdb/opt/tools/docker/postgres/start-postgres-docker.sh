@@ -1,0 +1,1 @@
+docker run --name bam-postgres -e POSTGRES_USER=bam -e POSTGRES_DB=bam -e POSTGRES_PASSWORD=postgresP455w0rd1! -p 5432:5432 -d postgres:16.2
