@@ -30,7 +30,6 @@ There are a number of different options to generate C# classes for data access o
 - From C# source files
 - From an existing assembly
 - From an open api specification
-- From a javascript literal file
 
 These options are discussed further in the following sections.
 
@@ -43,20 +42,20 @@ To extract a schema and generate related C# code, specify a database connection 
 - postgres - PostGreSQL
 
 ```
-bamdb generate --from:"[database connection string]" --out:./Dao --dbType:[dbType]
+bamdb code generate --from:"[database connection string]" --out:./Dao --dbType:[dbType]
 ```
 
 ### From C# source files
 To generate data access objects from plain C# classes specify the directory where the source code is found.  Also, specify the namespace where existing data classes are defined in the existing source code.
 
 ```
-bamdb generate --from:./srcDir --out:./Dao --fromNamespace:[existing.dataClass.namespace]
+bamdb code generate --from:./srcDir --out:./Dao --fromNamespace:[existing.dataClass.namespace]
 ```
 
 ### From an existing assembly
 
 ```
-bamdb generate --from:./assembly.dll --out:./Dao
+bamdb code generate --from:./assembly.dll --out:./Dao
 ```
 
 ## Relationship conventions

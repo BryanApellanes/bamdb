@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bamdb
+namespace BamDb
 {
     [ConsoleMenu("bamdb options")]
     public class ConsoleMenuContainer : Bam.Console.ConsoleMenuContainer
