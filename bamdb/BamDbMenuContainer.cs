@@ -7,16 +7,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bam.Data.Schema;
+using Bam.Generators;
+using Bam.Net.Data.Repositories;
+using Bam.Net.Data.Schema;
 
 namespace BamDb
 {
     [ConsoleMenu("bamdb options")]
-    public class ConsoleMenuContainer : Bam.Console.ConsoleMenuContainer
+    public class BamDbMenuContainer : ConsoleMenuContainer
     {
-        public ConsoleMenuContainer(ServiceRegistry serviceRegistry) : base(serviceRegistry)
+        public BamDbMenuContainer(ServiceRegistry serviceRegistry) : base(serviceRegistry)
         {
         }
 
+        public override ServiceRegistry Configure(ServiceRegistry serviceRegistry)
+        {
+            return serviceRegistry
+                .For<IDaoCodeWriter>().Use<HandlebarsCSharpDaoCodeWriter>()
+                .For<ISchemaProvider>().Use<SchemaProvider>()
+                .For<IDaoGenerator>().Use<DaoGenerator>()
+                .For<IWrapperGenerator>().Use<HandlebarsWrapperGenerator>()
+                .For<IDaoRepository>().Use<DaoRepository>();
+        }
+        
         [ConsoleCommand("generateDaoClassesFromJsLiteral")]
         public void GenerateDaoClassesFromJsLiteralFile()
         {
