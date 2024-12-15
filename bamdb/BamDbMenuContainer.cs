@@ -1,16 +1,9 @@
 ﻿using Bam.Console;
 using Bam;
 using Bam.CoreServices;
-using Org.BouncyCastle.Asn1.Mozilla;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Bam.Data.Schema;
 using Bam.Generators;
 using Bam.Data.Repositories;
-using Bam.Data.Schema;
 
 namespace BamDb
 {
