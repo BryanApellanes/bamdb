@@ -1,0 +1,5 @@
+# start bash in container
+docker exec -it <container_is> "bash"
+
+# build from current (.) folder containing Dockerfile
+docker build -t <new_image_name> .

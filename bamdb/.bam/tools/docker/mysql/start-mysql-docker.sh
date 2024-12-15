@@ -1,0 +1,1 @@
+docker run --name bam-mysql -e "MYSQL_ROOT_PASSWORD={MySqlPassword}" -e "MYSQL_DATABASE=bam" -e MYSQL_USER=bam -e "MYSQL_PASSWORD={MySqlPassword}" -p 3306:3306 -d mysql:8.2
