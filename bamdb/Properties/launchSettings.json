@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "bamdb": {
+      "commandName": "Project",
+      "commandLineArgs": "--gdcfjlf"
+    }
+  }
+}
