@@ -8,7 +8,8 @@ namespace Bam.Application
     {
         static void Main(string[] args)
         {
-            BamConsoleContext.StaticMain(args);
+            BamConsoleContext.Current.AddValidArgument("config", description: "The path to the config file used for generation.");
+            BamConsoleContext.Current.Main(args);
         }
     }
 }

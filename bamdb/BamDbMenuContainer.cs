@@ -4,6 +4,11 @@ using Bam.CoreServices;
 using Bam.Data.Schema;
 using Bam.Generators;
 using Bam.Data.Repositories;
+using System.Reflection;
+using Bam.Data;
+using Bam.Logging;
+using Bam.Shell;
+using MongoDB.Driver.Linq;
 
 namespace BamDb
 {
@@ -24,18 +29,50 @@ namespace BamDb
                 .For<IDaoRepository>().Use<DaoRepository>();
         }
         
-        [ConsoleCommand("generateDaoClassesFromJsLiteral")]
-        public void GenerateDaoClassesFromJsLiteralFile()
+        [ConsoleCommand("initConfig")]
+        [MenuItem]
+        public void InitConfig()
         {
-            Message.PrintLine("Generate from literal file");
-            Expect.Fail("This is not fully implemented");
+            DaoRepoGenerationConfig config = new DaoRepoGenerationConfig();
+            FileInfo file = new FileInfo(DaoRepoGenerationConfig.DefaultFilePath);
+            config.ToYaml().SafeAppendToFile(file.FullName);
+            Message.PrintLine("Dao repository generation configuration written to: {0}", file.FullName);
         }
 
-        [ConsoleCommand]
-        public void GenerateDaoClassesFromCSharpSource()
+        [MenuItem]
+        public void GenerateSchemaRepository()
         {
-            Message.PrintLine("Generate dao classes from CSharp Source");
-            Expect.Fail("This is not fully implemented");
+            IDaoRepoGenerationConfig config = DaoRepoGenerationConfig.LoadDefault();
+            DefaultSchemaRepositoryGenerator schemaRepositoryGenerator =
+                new DefaultSchemaRepositoryGenerator(config);
+            schemaRepositoryGenerator.GenerateSource();
+        }
+        
+        [MenuItem]
+        public void GenerateDataAccessCodeFromAssemblyNamespace()
+        {
+            string assemblyPath = Prompt.Show("Enter the path to the assembly.");
+            string nameSpace = Prompt.Show("Enter the namespace.");
+            string schemaName = BamConsoleContext.Current.Arguments["schemaName"];
+            schemaName = schemaName.Or(Prompt.Show("Enter a name for the schema"));
+            string output = Prompt.Show("Enter the path to write source to.");
+            if (string.IsNullOrEmpty(output))
+            {
+                output = "./.bam/gen/Dao";
+            }
+            TypeToDaoGenerator typeToDaoGenerator = new ServiceRegistry()
+                .For<IDaoCodeWriter>().Use<HandlebarsCSharpDaoCodeWriter>()
+                .For<ISchemaProvider>().Use<SchemaProvider>()
+                .For<IDaoGenerator>().Use<DaoGenerator>()
+                .For<IWrapperGenerator>().Use<HandlebarsWrapperGenerator>()
+                .For<IDaoRepository>().Use<DaoRepository>()
+                .For<ILogger>().Use(Log.Default)
+                .Get<TypeToDaoGenerator>();
+
+            Assembly assembly = Assembly.LoadFile(assemblyPath);
+            typeToDaoGenerator.SchemaName = schemaName;
+            typeToDaoGenerator.AddTypes(assembly.GetTypes().Where(type=> type.Namespace != null && type.Namespace.Equals(nameSpace)));
+            typeToDaoGenerator.GenerateSource(output);
         }
 
 

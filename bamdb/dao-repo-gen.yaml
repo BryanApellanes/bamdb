@@ -1,0 +1,7 @@
+TypeAssembly: /home/bryan/src/bamtk/submodules/bamfs/bam.blobs/bin/Debug/net8.0/bam.blobs.dll
+SchemaName: Blobs
+FromNamespace: Bam.Blobs.Data
+ToNamespace: Bam.Blobs.Data.Dao
+WriteSourceTo: /home/bryan/src/bamtk/submodules/bamfs/bam.blobs.dataaccess
+CheckForIds: true
+UseInheritanceSchema: false

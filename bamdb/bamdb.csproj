@@ -27,6 +27,9 @@
     <Compile Remove="_legacy\**" />
     <EmbeddedResource Remove="_legacy\**" />
     <None Remove="_legacy\**" />
+    <None Update="dao-repo-gen.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\bam.base\bam.base\bam.base.csproj" />
@@ -50,6 +53,9 @@
     <ProjectReference Include="..\..\bam.protocol\bam.protocol\bam.protocol.csproj" />
     <ProjectReference Include="..\..\bam.server\bam.server\bam.server.csproj" />
     <ProjectReference Include="..\..\bam.shell\bam.shell\bam.shell.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="YamlDotNet" Version="16.3.0" />
   </ItemGroup>
 
 </Project>
