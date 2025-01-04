@@ -1,1 +1,1 @@
-docker run --name bam-postgres -e POSTGRES_USER=bam -e POSTGRES_DB=bam -e POSTGRES_PASSWORD={PostgresPassword} -p 5432:5432 -d postgres:16.2
+docker run --name bam-postgres -e POSTGRES_USER=bam -e POSTGRES_DB=bam -e POSTGRES_PASSWORD={PostgresPassword} -p 5432:5432 -d {DefaultImageTags.Postgres}:16.2

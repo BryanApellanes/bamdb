@@ -39,12 +39,13 @@ namespace BamDb
             Message.PrintLine("Dao repository generation configuration written to: {0}", file.FullName);
         }
 
+        [ConsoleCommand("generateSchemaRepository")]
         [MenuItem]
         public void GenerateSchemaRepository()
         {
+            // Load the dao-repo-gen.yaml file in the current directory
             IDaoRepoGenerationConfig config = DaoRepoGenerationConfig.LoadDefault();
-            DefaultSchemaRepositoryGenerator schemaRepositoryGenerator =
-                new DefaultSchemaRepositoryGenerator(config);
+            HandlebarsSchemaRepositoryGenerator schemaRepositoryGenerator = new HandlebarsSchemaRepositoryGenerator(config);
             schemaRepositoryGenerator.GenerateSource();
         }
         
