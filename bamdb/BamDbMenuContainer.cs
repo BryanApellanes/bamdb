@@ -43,8 +43,16 @@ namespace BamDb
         [MenuItem]
         public void GenerateSchemaRepository()
         {
-            // Load the dao-repo-gen.yaml file in the current directory
-            IDaoRepoGenerationConfig config = DaoRepoGenerationConfig.LoadDefault();
+            IDaoRepoGenerationConfig? config = null; 
+            if (BamConsoleContext.Current.Arguments.Contains("config"))
+            {
+                config = DaoRepoGenerationConfig.ReadFrom(BamConsoleContext.Current.Arguments["config"]);
+            }
+            else
+            {
+                config = DaoRepoGenerationConfig.ReadFile();
+            }
+
             HandlebarsSchemaRepositoryGenerator schemaRepositoryGenerator = new HandlebarsSchemaRepositoryGenerator(config);
             schemaRepositoryGenerator.GenerateSource();
         }

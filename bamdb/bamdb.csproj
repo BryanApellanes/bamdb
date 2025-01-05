@@ -27,7 +27,7 @@
     <Compile Remove="_legacy\**" />
     <EmbeddedResource Remove="_legacy\**" />
     <None Remove="_legacy\**" />
-    <None Update="dao-repo-gen.yaml">
+    <None Update="DaoRepoGenerationConfig.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
