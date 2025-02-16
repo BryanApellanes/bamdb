@@ -1,14 +1,14 @@
 ﻿using Bam.Console;
 using Bam;
-using Bam.CoreServices;
 using Bam.Data.Schema;
 using Bam.Generators;
 using Bam.Data.Repositories;
 using System.Reflection;
 using Bam.Data;
+using Bam.DependencyInjection;
 using Bam.Logging;
+using Bam.Services;
 using Bam.Shell;
-using MongoDB.Driver.Linq;
 
 namespace BamDb
 {
