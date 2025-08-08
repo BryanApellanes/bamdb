@@ -1,4 +1,4 @@
-TypeAssembly: ~/.bam/build/Release/bam.blobs.distributed/net8.0/bam.blobs.distributed.dll
+﻿TypeAssembly: ~/.bam/build/Release/bam.blobs.distributed/net8.0/bam.blobs.distributed.dll
 SchemaName: DistributedBlobData
 FromNamespace: Bam.Blobs.Data.Distributed
 WriteSourceTo: ../Generated.Dao

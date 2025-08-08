@@ -1,0 +1,7 @@
+﻿TypeAssembly: ~/.bam/build/Debug/bam.protocol.data/net8.0/bam.protocol.data.dll
+SchemaName: ClientSessionSchema
+FromNamespace: Bam.Protocol.Data.Client
+WriteSourceTo: ../Generated_Dao
+CheckForIds: true
+UseInheritanceSchema: false
+WarningsAsErrors: true

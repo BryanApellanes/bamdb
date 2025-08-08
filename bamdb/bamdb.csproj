@@ -27,7 +27,19 @@
     <Compile Remove="_legacy\**" />
     <EmbeddedResource Remove="_legacy\**" />
     <None Remove="_legacy\**" />
-    <None Update="DaoRepoGenerationConfig.yaml">
+    <None Update="DaoRepoGenerationConfig\bam.protocol.data.server.dao-repo-gen.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DaoRepoGenerationConfig\bam.blobs.distributed.dao-repo-gen.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DaoRepoGenerationConfig\bam.protocol.data.client.dao-repo-gen.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DaoRepoGenerationConfig\bam.protocol.data.profile.dao-repo-gen.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="DaoRepoGenerationConfig\bam.protocol.data.private.dao-repo-gen.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

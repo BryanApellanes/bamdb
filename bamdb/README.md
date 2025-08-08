@@ -9,7 +9,7 @@ The following describes options for generating data access objects.
 - **--from** - The source that data structures are derived from.  This can be one of the following:
   - *database connection string* - specify a connection string to an existing database for one of the supported relational database types, see [From an existing database](#from-an-existing-database).
   - *path to a .NET assembly* - specify the path to an existing .NET assembly that contains data types that are intended to be persisted.  See, *fromNamespace* in [Optional parameters](#optional-parameters).
-  - *path to directory containing c# code files* - specify the path to an directory that contains c# code files.  To generate data access code for classes in a specific namespace specify the *fromNamespace* parameter.  See, *fromNamespace* in [Optional parameters](#optional-parameters).
+  - *path to directory containing c# code files* - specify the path to a directory that contains c# code files.  To generate data access code for classes in a specific namespace specify the *fromNamespace* parameter.  See, *fromNamespace* in [Optional parameters](#optional-parameters).
   - *path to an open api specification* - specify the path to an open api specification.
 - **--out** - The destination to write generated files to.  This can be one of the following:
   - *directory path* - specify the path to a directory where generated code files are written
@@ -19,7 +19,7 @@ The following describes options for generating data access objects.
 
 - --checkForIds:***[true | false]*** - Checks that source data types have an Id property and throws an exception if it is missing. 
 - --fromNamespace:***[namespace]*** - The namespace to look for data types in.
-- --schemaName:***[schemaName]*** - The name to give to the gnerated schema.
+- --schemaName:***[schemaName]*** - The name to give to the generated schema.
 - --templatePath:***[/filesystem/path/to/templates]*** - Override the default templates with those found in the specified directory.
 - --toNamespace:***[namespace]*** - The namespace to place generated classes into.
 

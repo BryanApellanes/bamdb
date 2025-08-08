@@ -53,8 +53,18 @@ namespace BamDb
                 config = DaoRepoGenerationConfig.ReadFile();
             }
 
+            if (BamConsoleContext.Current.Arguments.Contains("output"))
+            {
+                config.WriteSourceTo = BamConsoleContext.Current.Arguments["output"];
+            }
+            else if (BamConsoleContext.Current.Arguments.Contains("o"))
+            {
+                config.WriteSourceTo = BamConsoleContext.Current.Arguments["o"];
+            }
+
             HandlebarsSchemaRepositoryGenerator schemaRepositoryGenerator = new HandlebarsSchemaRepositoryGenerator(config);
             schemaRepositoryGenerator.GenerateSource();
+            Message.PrintLine("Wrote source to {0}", config.WriteSourceTo);
         }
         
         [MenuItem]
