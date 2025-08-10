@@ -2,19 +2,23 @@
   "profiles": {
     "regen-protocol-server": {
       "commandName": "Project",
-      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.server.dao-repo-gen.yaml --o=D:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Server\\\\Generated_Dao\n"
+      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.server.dao-repo-gen.yaml --o=C:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Server\\\\Generated_Dao\n"
     },
     "regen-protocol-client": {
       "commandName": "Project",
-      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.client.dao-repo-gen.yaml --o=D:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Client\\\\Generated_Dao\n"
+      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.client.dao-repo-gen.yaml --o=C:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Client\\\\Generated_Dao\n"
+    },
+    "regen-protocol-common": {
+      "commandName": "Project",
+      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.common.dao-repo-gen.yaml --o=C:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Common\\\\Generated_Dao\n"
     },
     "regen-protocol-profile": {
       "commandName": "Project",
-      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.profile.dao-repo-gen.yaml --o=D:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Profile\\\\Generated_Dao\n"
+      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.profile.dao-repo-gen.yaml --o=C:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Profile\\\\Generated_Dao\n"
     },
     "regen-protocol-private": {
       "commandName": "Project",
-      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.private.dao-repo-gen.yaml --o=D:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Private\\\\Generated_Dao\n"
+      "commandLineArgs": "--gsr --config=./DaoRepoGenerationConfig/bam.protocol.data.private.dao-repo-gen.yaml --o=C:\\\\src\\\\repos\\\\Server1\\\\domains\\\\bam-toolkit.sh\\\\.bam\\\\submodules\\\\bamtk\\\\submodules\\\\bam.protocol\\\\bam.protocol.data\\\\Private\\\\Generated_Dao\n"
     }
   }
 }

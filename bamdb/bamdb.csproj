@@ -42,6 +42,9 @@
     <None Update="DaoRepoGenerationConfig\bam.protocol.data.private.dao-repo-gen.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="DaoRepoGenerationConfig\bam.protocol.data.common.dao-repo-gen.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\bam.base\bam.base\bam.base.csproj" />
