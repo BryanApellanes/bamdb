@@ -71,12 +71,6 @@ public virtual List<Child> Children { get; set; }
 ### Cross reference collections (many to many)
 To define a cross reference or many to many relationship be sure t
 
-## Generate C# data access object classes from a javascript literal file
-
-```
-bamdb generate --from:database.js --out:./Dao
-```
-
 ## Generate a data access object assembly
 To compile an assembly from the generated C# source code, specify the path to a .dll file as the `--out` parameter instead of a directory.
 
