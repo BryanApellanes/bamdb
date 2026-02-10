@@ -69,7 +69,17 @@ public virtual List<Child> Children { get; set; }
 ```
 
 ### Cross reference collections (many to many)
-To define a cross reference or many to many relationship be sure t
+To define a cross reference or many to many relationship be sure to add a property of type `List<OtherType>` to each of the related types and make sure the property is defined as `virtual`.  For example, if you have two types `Student` and `Course` that have a many to many relationship you would define the relationship as follows:
+```
+public class Student
+{
+	public virtual List<Course> Courses { get; set; }
+}
+public class Course
+{
+	public virtual List<Student> Students { get; set; }
+}
+```
 
 ## Generate a data access object assembly
 To compile an assembly from the generated C# source code, specify the path to a .dll file as the `--out` parameter instead of a directory.
