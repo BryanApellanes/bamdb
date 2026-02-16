@@ -12,13 +12,26 @@ using Bam.Shell;
 
 namespace BamDb
 {
+    /// <summary>
+    /// Console menu container that provides bamdb commands for initializing configuration,
+    /// generating schema repositories, and generating DAO code from assembly namespaces.
+    /// </summary>
     [ConsoleMenu("bamdb options")]
     public class BamDbMenuContainer : ConsoleMenuContainer
     {
+        /// <summary>
+        /// Initializes a new instance with the specified service registry.
+        /// </summary>
+        /// <param name="serviceRegistry">The service registry for dependency resolution.</param>
         public BamDbMenuContainer(ServiceRegistry serviceRegistry) : base(serviceRegistry)
         {
         }
 
+        /// <summary>
+        /// Configures the service registry with default Handlebars-based DAO generation services.
+        /// </summary>
+        /// <param name="serviceRegistry">The service registry to configure.</param>
+        /// <returns>The configured service registry.</returns>
         public override ServiceRegistry Configure(ServiceRegistry serviceRegistry)
         {
             return serviceRegistry
@@ -29,6 +42,9 @@ namespace BamDb
                 .For<IDaoRepository>().Use<DaoRepository>();
         }
         
+        /// <summary>
+        /// Creates a default DAO repository generation configuration file and writes it to the default path.
+        /// </summary>
         [ConsoleCommand("initConfig")]
         [MenuItem]
         public void InitConfig()
@@ -39,6 +55,10 @@ namespace BamDb
             Message.PrintLine("Dao repository generation configuration written to: {0}", file.FullName);
         }
 
+        /// <summary>
+        /// Generates DAO schema repository source files using configuration from a YAML file.
+        /// Reads the config from the --config argument or the default path, and writes output to --output or -o if specified.
+        /// </summary>
         [ConsoleCommand("generateSchemaRepository")]
         [MenuItem]
         public void GenerateSchemaRepository()
@@ -67,6 +87,10 @@ namespace BamDb
             Message.PrintLine("Wrote source to {0}", config.WriteSourceTo);
         }
         
+        /// <summary>
+        /// Interactively prompts for an assembly path, namespace, schema name, and output path,
+        /// then generates DAO source code for the types in the specified namespace.
+        /// </summary>
         [MenuItem]
         public void GenerateDataAccessCodeFromAssemblyNamespace()
         {
