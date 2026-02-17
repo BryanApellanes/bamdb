@@ -109,7 +109,7 @@ namespace BamDb
                 .For<IDaoGenerator>().Use<DaoGenerator>()
                 .For<IWrapperGenerator>().Use<HandlebarsWrapperGenerator>()
                 .For<IDaoRepository>().Use<DaoRepository>()
-                .For<ILogger>().Use(Log.Default)
+                .For<ILogger>().Use(Log.Default!)
                 .Get<TypeToDaoGenerator>();
 
             Assembly assembly = Assembly.LoadFile(assemblyPath);
