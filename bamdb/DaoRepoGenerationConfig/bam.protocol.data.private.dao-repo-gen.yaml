@@ -1,5 +1,5 @@
 ﻿TypeAssembly: ~/.bam/build/Debug/bam.protocol.data/net8.0/bam.protocol.data.dll
-SchemaName: ProfileSchema
+SchemaName: PrivateSchema
 FromNamespace: Bam.Protocol.Data.Private
 WriteSourceTo: ../Generated_Dao
 CheckForIds: true
