@@ -1,4 +1,4 @@
-﻿TypeAssembly: ~/.bam/build/Debug/bam.protocol.data/net8.0/bam.protocol.data.dll
+﻿TypeAssembly: ~/.bam/build/Debug/bam.protocol.data/net10.0/bam.protocol.data.dll
 SchemaName: ProfileSchema
 FromNamespace: Bam.Protocol.Data.Profile
 WriteSourceTo: ./Generated_Dao

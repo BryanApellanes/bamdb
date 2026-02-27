@@ -10,6 +10,8 @@
   <ItemGroup>
     <ProjectReference Include="$(BamFrameworkRoot)bam.base\bam.base\bam.base.csproj" />
     <ProjectReference Include="$(BamFrameworkRoot)bam.console\bam.console\bam.console.csproj" />
+    <ProjectReference Include="$(BamFrameworkRoot)bam.data.repositories\bam.data.repositories\bam.data.repositories.csproj" />
+    <ProjectReference Include="$(BamFrameworkRoot)bam.protocol\bam.protocol.data\bam.protocol.data.csproj" />
     <ProjectReference Include="$(BamFrameworkRoot)bam.test\bam.test\bam.test.csproj" />
     <ProjectReference Include="..\bamdb\bamdb.csproj" />
   </ItemGroup>
