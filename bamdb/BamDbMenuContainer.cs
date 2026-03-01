@@ -88,6 +88,29 @@ namespace BamDb
         }
         
         /// <summary>
+        /// Regenerates all DAO code by recursively scanning for *.dao-repo-gen.yaml files,
+        /// discovering their owning .csproj, building the project, and generating source.
+        /// </summary>
+        [ConsoleCommand("regenerateAll")]
+        [MenuItem]
+        public void RegenerateAll()
+        {
+            string rootDirectory = ".";
+            if (BamConsoleContext.Current.Arguments.Contains("regenerateAll"))
+            {
+                string argValue = BamConsoleContext.Current.Arguments["regenerateAll"];
+                if (!string.IsNullOrEmpty(argValue))
+                {
+                    rootDirectory = argValue;
+                }
+            }
+
+            ILogger logger = Log.Default ?? new ConsoleLogger();
+            DaoRepoGenerationService service = new DaoRepoGenerationService(logger);
+            service.RegenerateAll(rootDirectory);
+        }
+
+        /// <summary>
         /// Interactively prompts for an assembly path, namespace, schema name, and output path,
         /// then generates DAO source code for the types in the specified namespace.
         /// </summary>
