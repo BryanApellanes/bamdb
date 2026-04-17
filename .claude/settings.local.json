@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"C:\\\\src\\\\repos\\\\bamdb\" log --oneline -20)",
+      "Bash(dotnet:*)",
+      "Bash(git config:*)",
+      "Bash(ls:*)",
+      "Bash(xargs cat:*)"
+    ]
+  }
+}
