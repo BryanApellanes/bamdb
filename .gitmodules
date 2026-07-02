@@ -25,6 +25,9 @@
 [submodule "submodules/bam.console"]
 	path = submodules/bam.console
 	url = git@github.com:BryanApellanes/bam.console.git
+[submodule "submodules/bam.core"]
+	path = submodules/bam.core
+	url = git@github.com:BryanApellanes/bam.core.git
 [submodule "submodules/bam.data"]
 	path = submodules/bam.data
 	url = git@github.com:BryanApellanes/bam.data.git
