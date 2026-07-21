@@ -6,7 +6,7 @@
     <description>bamdb</description>
   </metadata>
   <files>
-    <file src="_._" target="lib/net7.0" />
-    <file src="$publishdir$\net7.0\**\*" target="tools/net7.0" />
+    <file src="_._" target="lib/net10.0" />
+    <file src="$publishdir$\net10.0\**\*" target="tools/net10.0" />
   </files>
 </package>
